@@ -1,0 +1,701 @@
+/* Import Google Web fonts */
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic);
+
+
+/* Set the page defaults e.g. background and default typography */
+
+body {
+  background: #fff;
+  font-family: 'Noto Serif', serif;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.74);
+}
+
+h4 {
+  margin-right: 653px;;
+  font-size: 1.5em;
+  color: white;
+}
+
+h5 {
+  font-family: 'Noto Serif', serif;
+  font-size: 6vw;
+  margin-top: -40px;
+margin-right: 653px;
+margin-bottom: 20px;
+}
+
+
+/* a few tweaks here and there */
+/* adam here */
+article {
+  position: relative;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 999;
+}
+
+@media screen and (min-width: 801px){
+  .content {
+    padding: 1em 10% 1em 60%;
+  }
+
+  .menu .wrapper {
+    padding: 1em 2em;
+  }
+
+  .menu li a {
+    font-family: inherit;
+    font-size: 12px;
+    color: #000;
+    margin-top: 25px;
+    text-decoration: none;
+  }
+
+  .menu li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .menu-mobile {
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+  
+  .menu-mobile {
+    display:block;
+    text-align: center;
+    width:32px;
+    height:32px;
+    right:20px; /* change placement menu button on left or right */
+    top: 6px;
+    position: absolute;
+    /* padding-top: 20px; */
+    z-index: 9999;
+  }
+  
+  .menu-mobile a,
+  .menu-mobile:before,
+  .menu-mobile:after {
+    background: #000;
+    display: block;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+  }
+  
+  .close.menu-mobile a,
+  .close.menu-mobile:before,
+  .close.menu-mobile:after {
+    background: #000;
+    color: #000;
+  }
+  
+  .menu-mobile:before {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  
+  .menu-mobile:after {
+    -webkit-transform: translate(0, 8px);
+    transform: translate(0, 8px);
+  }
+  
+  .menu-mobile a {
+    color: #000;
+    font-size: 9px;
+    line-height: 26px;
+    letter-spacing: 2.2px;
+    text-decoration:none;
+    text-transform: uppercase;
+    -webkit-transform: translate(0, 16px);
+    transform: translate(0, 16px);
+    transition: background 0.5s ease, width 0.5s ease;
+  }
+  
+  .menu-mobile:before,
+  .menu-mobile:after {
+    content:'';
+    /*animation: circle 0.5s ease;*/
+    transition: all 1s ease;
+  }
+  
+  .close a {
+    font-size: 45%;
+    line-height: 28px;
+    width: 0;
+    transition: width 0.5s ease-out, background 0.5s ease;
+    -webkit-transform: translate(0px, 16px);
+    transform: translate(0px, 16px);
+  }
+  
+  .close:before,
+  .close:after {
+    transition: all 0.5s ease-in;
+  }
+  
+  .close:before {
+    -webkit-transform: rotate(45deg) translate(8px, 8px);
+    transform: rotate(45deg) translate(8px, 8px);
+  }
+  
+  .close:after {
+    -webkit-transform: rotate(-45deg) translate(-8px, 8px);
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  nav {
+    border:0;
+  }
+
+  .header {
+    padding: 20px 0;
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -240px;
+    margin: 0;
+    min-height: 100%;
+    z-index: 2;
+    background: #000;
+  }
+  
+  .menu .scroll-container {
+    position:relative;
+  }
+  
+  .menu-expanded {
+    opacity: 1;
+    transition: all 0.8s ease;
+    /*transition: width 1s cubic-bezier(0, 0.15, 0.1, 3);*/
+    transform: translate3d(-240px,0,0);
+    -webkit-transform: translate3d(-240px,0,0);
+  }
+  
+  .menu-collapsed {
+    opacity: 0;
+    transition: all 0.8s ease;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+  
+  .menu div:before {
+    border-top:0;
+  }
+  
+  .menu li {
+    float:none;
+    height: auto;
+    line-height: 40px;
+    list-style: none;
+    margin: 15px 0;
+    padding: 0 2.5em;
+  }
+  
+  .menu > li:first-child {
+    margin-top: 80px;
+  }
+  
+  .menu li:last-child {
+    margin-bottom: 70%;
+  }
+  
+  .menu li ul li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .menu li ul {
+    display: none;
+    position: relative;
+    top:0;
+  }
+  
+  .menu li ul li {
+    background:none;
+  }
+  
+  .menu li ul li:first-child {
+    margin-top:20px;
+  }
+  
+  .menu li ul li,
+  .menu li ul li:first-child {
+    padding-left: 36px;
+  }
+  
+  .menu li ul li:first-child a {
+    padding-left: 15px;
+  }
+  
+  .menu li a {
+    font-size: 70%;
+    line-height: normal;
+    display: block;
+    margin: 0 20px;
+    padding: 15px 0;
+    color: #fff;
+  }
+
+  .image_bg.tuyun1, .image_bg.tuyun2, .image_bg.tuyun3 {
+    background-position: right;
+  }
+
+  .image_bg.doc1 {
+    background-position: center;
+  }
+
+  .image_bg header h2 {
+    font-size: 1em;
+  }
+
+  .content.hambit {
+    padding: 0;
+  }
+
+  .content.hambit .wrapper,
+  .content.cornelis * {
+    padding: 0 20px;
+  }
+
+  .content.cornelis {
+    padding: 0;
+  }
+
+  .image_bg.head {
+    background-size: cover;
+  }
+}
+
+/* adam here */
+
+
+
+.sidenav {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: black;
+    overflow-x: hidden;
+    padding: 8px 0;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+.sidenav a:hover {
+    color: red;
+}
+
+.main {
+    margin-left: 140px; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+h2 {
+  margin: 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Set the default style of the figure element */
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+figcaption {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Default style of the blockquote element
+    Tweak this or add your won by using class names */
+
+blockquote {
+  width: 66%;
+  margin: 1em auto;
+  background: #ddd;
+  padding: 1em;
+  font-size: 1.25em;
+  text-align: center;
+  color: #696969;
+  border-bottom: 1px solid #999;
+  border-top: 1px solid #999;
+}
+
+/* This controls the content sections.
+    The width of the column is set by "padding" rather than the "width" style
+    e.g. 20% = 60% width. */
+
+.content {
+  margin: 0 auto;
+  padding: 1em 20%;
+  box-sizing: border-box;
+}
+
+/* The footer's style */
+
+footer {
+  height: 100px;
+  background: #000;
+  color: #eee;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Styling the full-page background headers */
+
+.image_bg {
+  /* this sets the height of each
+  full width image section to that of the viewport.*/
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-position: center !important; */
+}
+
+
+/* the text inside the headers */
+
+header {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 0 9px #000000;
+  width: 75%;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 6vw;
+}
+
+
+
+header a {
+  color: white;
+}
+
+
+
+/* Styles for header sections to apply background images or colour. */
+
+.pier {
+  background: url(images/luc-sur-mer-pier.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.paris {
+  background: url(images/Akil.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.head {
+  background-color: #000;
+  background-image: url(images/Gecko-Header-Temp.jpg);
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.hambit {
+  background: url(images/hambit.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.soeharto {
+  background: url(images/soeharto.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.my_green {
+  /* this sets the background colour of the coloured header. */
+  background: #AED581;
+}
+
+/* These are the background images defined in example.html */
+
+.paris_scroll {
+  background: url(images/Paris2013.jpg);
+  background-size: cover;
+  background-attachment: scroll;
+  /*This line makes it scroll, not fixed */
+}
+
+.cornelis {
+  background: url(images/cornelis.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+
+.cbip {
+  background: url(images/cbip.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.jaya {
+  background: url(images/Jaya.png);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.mulan {
+  background: url(images/mina.gif);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.doc1 {
+  background: url(images/doc1.png);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.forest1 {
+  background: url(images/forest1.png);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.forest2 {
+  background: url(images/forest2.png);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.tuyun1 {
+  background: url(images/t1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.tuyun2 {
+  background: url(images/t2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.tuyun3 {
+  background: url(images/t3.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.demo {
+  background: url(images/demo.png);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.sketch {
+  background: url(images/sketch.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.oldpaper {
+  /* This style is applied to a content section
+  rather than a header section */
+  background: url(images/old-paper.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.beer {
+  background: url(images/beer.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+.embeds {
+  background: url(images/croissant-648803_1280.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100% !important;
+}
+
+/* Example stuff - The CSS for the additional examples in example.html */
+
+.profile img { /* styles the profile images in the first header section*/
+
+  width: 90px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 1em;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.profile {
+  text-align: center;
+  font-weight: normal;
+}
+
+/* Styling the alternative figure example */
+
+.overlay_fig {
+  position: relative;
+}
+
+.overlay_fig img {
+  box-shadow: none;
+}
+
+.overlay_fig figcaption {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  background: rgba(0, 0, 0, 0.6);
+  width: 66%;
+  font-size: 2em;
+  color: white;
+  padding: 0.33em;
+}
+
+
+.content.cornelis {
+  /* This style creates an alternative style for the column of content
+  the column is ofset to the right of the viewport rather than centred */
+
+}
+
+.content.hambit {
+  /* This style creates an alternative style for the column of content
+  the column is ofset to the right of the viewport rather than centred */
+  
+  color:white;
+}
+
+
+/*Alternative blockquote styles */
+.bq_one {
+  font-size: 18px;
+  font-family: georgia, serif;
+  color: #900C3F;
+  background: #FAD7A0;
+  padding: 1em;
+  border-left: 8px solid #C70039;
+}
+
+.bq_two {
+  background: none;
+}
+
+/* Making the rows */
+
+.flex_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  margin: 0.5em;
+  flex-basis: 20%; /*This determines each item's width*/
+  flex-grow: 1; /* This makes each item grow to fit the available space. set to 0 to tuen off*/
+}
+
+.round img {
+  border-radius: 50%;
+}
+
+.embed_bg { /* a hack to make embedding stuff into the headers work */
+  /* height: 100vh; */
+   /* this sets the height of each full width image section to that of the viewport.*/
+   position: relative;
+   /*display: flex;  */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-position: center !important;
+}
+
+
+/* Create an overlay colour or image
+to cover the background image of a full screen header.
+This could be a transparent colour - see the coomented line below, or an image.
+The image defined below is a black/transparent vignette-styled png file.   */
+.overlay_full {
+  position: absolute;
+/* background: rgba(122,55,0,0.3); */
+background: url(images/grad1.png) no-repeat;
+background-size: cover;
+width: 100%;
+height: 100vh;
+z-index: 2;
+}
+
+.front { /* apply this to the header that corresponds to the overlay_full element.
+  It will ensure that the header and text go above the overlay colour or image*/
+  z-index:100;
+}
+
+
+.overlay_full_holes {
+  position: absolute;
+/* background: rgba(122,55,0,0.3); */
+background: url(images/top_secret.png) no-repeat;
+background-size: cover;
+width: 100%;
+height: 100vh;
+z-index: 2;
+}
